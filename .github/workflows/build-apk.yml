@@ -17,11 +17,11 @@ jobs:
       - name: Baixar projeto
         uses: actions/checkout@v4
 
-      - name: Selecionar V48
+      - name: Selecionar V49
         run: |
-          ZIP_FILE="./000_Ricardo_Souza_Collection_Android_v48.zip"
+          ZIP_FILE="./000_Ricardo_Souza_Collection_Android_v49.zip"
           if [ ! -f "$ZIP_FILE" ]; then
-            echo "V48 não encontrado."
+            echo "V49 não encontrado."
             exit 1
           fi
           echo "ZIP_FILE=$ZIP_FILE" >> "$GITHUB_ENV"
@@ -119,6 +119,6 @@ jobs:
       - name: Publicar APK assinado
         uses: actions/upload-artifact@v4
         with:
-          name: Ricardo-Souza-Collection-APK-Assinado-V48
+          name: Ricardo-Souza-Collection-APK-Assinado-V49
           path: ${{ env.PROJECT_DIR }}/app/build/outputs/apk/release/*.apk
           if-no-files-found: error
