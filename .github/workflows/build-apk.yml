@@ -89,6 +89,9 @@ jobs:
           echo "$RSC_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/ricardo-collection-release.jks"
 
           echo "RSC_KEYSTORE_PATH=$RUNNER_TEMP/ricardo-collection-release.jks" >> "$GITHUB_ENV"
+                - name: Corrigir sintaxe Kotlin
+        run: |
+          sed -i '129s/<= if (tt.length >= 7) 2 else 1/<= (if (tt.length >= 7) 2 else 1)/' "$PROJECT_DIR/app/src/main/java/com/ricardosouza/collection/network/MusicBrainzRepository.kt"
 
       - name: Compilar APK Release assinado
         working-directory: ${{ env.PROJECT_DIR }}
