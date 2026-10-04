@@ -17,11 +17,11 @@ jobs:
       - name: Baixar projeto
         uses: actions/checkout@v4
 
-      - name: Selecionar V45
+      - name: Selecionar V46
         run: |
-          ZIP_FILE="./000_Ricardo_Souza_Collection_Android_v45.zip"
+          ZIP_FILE="./000_Ricardo_Souza_Collection_Android_v46.zip"
           if [ ! -f "$ZIP_FILE" ]; then
-            echo "V45 não encontrado."
+            echo "V46 não encontrado."
             exit 1
           fi
           echo "ZIP_FILE=$ZIP_FILE" >> "$GITHUB_ENV"
